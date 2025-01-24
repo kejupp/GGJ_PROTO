@@ -4,11 +4,18 @@ init python:
 
 
 label struggle:
-    "Giving up already? Typical. Fine, have it your way. {w=3.0}{nw}"
-    call screen credits
+    # "Giving up already? Typical. Fine, have it your way. {w=3.0}{nw}"
+    call screen credits_cg
 
 label end_now:
     $ leave()
+
+screen credits_cg():
+    add "placeholder cg"
+    timer 3 action Jump("credits_next")
+
+label credits_next:
+    call screen credits
 
 transform credits_scroll(speed):
     xcenter 0.5 yanchor 0.0 ypos 1.0
