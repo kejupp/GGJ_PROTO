@@ -30,6 +30,8 @@ label start:
 
     e "This is more filler text. Huh."
 
+    "This is a first person POV as well i guess."
+
     # This ends the game.
 
     return
