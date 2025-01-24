@@ -282,7 +282,6 @@ define gui.main_menu_text_xalign = 1.0
 ##
 ## These variables control the look of frames that can contain user interface
 ## components when an overlay or window is not present.
-
 ## Generic frames.
 define gui.frame_borders = Borders(6, 6, 6, 6)
 
