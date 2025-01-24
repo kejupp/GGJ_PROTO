@@ -1,30 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/minigame.rpy", line 6, in script
-    $ renpy.hide_screen(main_menu)
-  File "game/minigame.rpy", line 6, in <module>
-    $ renpy.hide_screen(main_menu)
-TypeError: 'bool' object is not iterable
+  File "game/script.rpy", line 35, in script
+    e "That was crazyyy"
+Exception: Sayer 'e' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigame.rpy", line 6, in script
-    $ renpy.hide_screen(main_menu)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/minigame.rpy", line 6, in <module>
-    $ renpy.hide_screen(main_menu)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\display\screen.py", line 1450, in hide_screen
-    screen = get_screen(tag, layer)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\display\screen.py", line 1147, in get_screen
-    for tag in name:
-TypeError: 'bool' object is not iterable
+  File "game/script.rpy", line 35, in script
+    e "That was crazyyy"
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
+    Say.execute(self)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'e' is not defined.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
 GGJ_PROTO1 1.0
-Sat Jan 25 02:27:27 2025
+Sat Jan 25 06:29:40 2025

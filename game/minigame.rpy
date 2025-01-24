@@ -3,5 +3,5 @@ init python:
         quit()
 
 label struggle:
-    "Credits: none {w=3.0}{nw}"
+    "Giving up already? Typical. Fine, have it your way. {w=3.0}{nw}"
     $ leave()        
