@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 6, in script
-    init python:
-  File "game/script.rpy", line 7, in <module>
-    config.fullscreen = True
-Exception: config.fullscreen is not a known configuration variable.
+  File "game/minigame.rpy", line 6, in script
+    $ renpy.hide_screen(main_menu)
+  File "game/minigame.rpy", line 6, in <module>
+    $ renpy.hide_screen(main_menu)
+TypeError: 'bool' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 6, in script
-    init python:
+  File "game/minigame.rpy", line 6, in script
+    $ renpy.hide_screen(main_menu)
   File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 7, in <module>
-    config.fullscreen = True
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\defaultstore.py", line 101, in __setattr__
-    raise Exception('config.%s is not a known configuration variable.' % (name))
-Exception: config.fullscreen is not a known configuration variable.
+  File "game/minigame.rpy", line 6, in <module>
+    $ renpy.hide_screen(main_menu)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\display\screen.py", line 1450, in hide_screen
+    screen = get_screen(tag, layer)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\display\screen.py", line 1147, in get_screen
+    for tag in name:
+TypeError: 'bool' object is not iterable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
 GGJ_PROTO1 1.0
-Fri Jan 24 21:56:03 2025
+Sat Jan 25 02:27:27 2025
