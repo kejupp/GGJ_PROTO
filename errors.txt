@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame.rpy", line 6: expected 'image_name_component' not found.
-    hide("main_menu")
-        ^
+File "game/minigame.rpy", line 49: 'action' is not a keyword argument or valid child of the screen statement.
+    action Return()
+          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Jan 25 02:33:58 2025
+Sat Jan 25 07:23:00 2025
