@@ -1136,6 +1136,36 @@ style help_label_text:
 ################################################################################
 
 
+screen bubble_minigame():
+    tag minigame
+
+
+    # Timer countdown
+    text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
+
+    # Bubble counter
+    text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
+
+    # Bubble spawning and popping
+    timer 0.5 action If(not bubble_game.game_over and len(bubble_list) < 20, Function(spawn_bubble))
+
+    # Repeated timer to update screen every 0.1 seconds
+    timer 0.1 action Function(bubble_game.update_timer) repeat True
+    
+    # Spawn bubbles every 1 second if game isn't over
+    timer 1.0 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
+
+    for i, bubble in enumerate(bubble_list):
+        imagebutton:
+            idle "bubble.png"
+            action Function(bubble_game.pop_bubble), Function(remove_bubble, i)
+            at bubble_move(bubble["x"], bubble["y"])
+
+    if bubble_game.game_over:
+        text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
+        timer 2.0 action Jump("after_minigame")
+
+
 ## Confirm screen ##############################################################
 ##
 ## The confirm screen is called when Ren'Py wants to ask the player a yes or no
