@@ -1177,20 +1177,16 @@ screen minigame2():
         if randomly == screen_list[0]:
             add "wheel1.png"
             $ car.set_matchthis(1)
-            $ trigger = False
         elif randomly == screen_list[1]:
             add "clutch2.png"
             $ car.set_matchthis(2)
-            $ trigger = False
         elif randomly == screen_list[2]:
             add "accelerate3.png"
             $ car.set_matchthis(3)
-            $ trigger = False
-            
         elif randomly == screen_list[3]:
             add "break4.png"
             $ car.set_matchthis(4)
-            $ trigger = False
+
     if bounce == True:
         imagebutton:
             idle "steering_wheel.png"

@@ -2,12 +2,13 @@ init python:
     import random
     screen_list = ["wheel","clutch", "accelerate", "break"]
 
+    # def random_screen():
+    #     q = random.randint(0,3)
+    #     m = q
+    #     return screen_list[q]
+
     trigger = True
     bounce = False
-
-    def random_screen():
-        q = random.randint(0,3)
-        return screen_list[q]
 
     class driver:
         def __init__(self):
@@ -36,58 +37,37 @@ init python:
 # random called every time minigame is called
 
 label screen2show:
-        "!! WATCH OUT! {w=3}{nw}"
-        pause 0.3
-        $ randomly = random_screen()
+        $ randomly = screen_list[1]
+        $ trigger = True
         show screen minigame2
-        pause 1 
-        $ bounce = True
         pause 3
+        $ trigger = False
+        $ bounce = True
+        pause 2
         $ bounce = False
         hide screen minigame2
 
-        if car.compare(car.takeit, car.matchthis) == True:
-            $ car.addh()
-            
-            $ car.takethis = 0
-            $ car.matchthis = 0
-
+        if car.takeit == 2:
             jump screen3show
-        elif car.compare(car.takeit, car.matchthis)  == False:
+
+        else:
             jump bad_road
 
 label screen3show:
-        $ randomly = random_screen()
+        $ randomly = screen_list[3]
+        $ trigger = True
         show screen minigame2
-        pause 1 
-        $ bounce = True
         pause 3
+        $ trigger = False
+        $ bounce = True
+        pause 2
         $ bounce = False
         hide screen minigame2
 
-        if car.compare(car.takeit, car.matchthis) == True:
-            $ car.addh()
-
-            $ car.takethis = 0
-            $ car.matchthis = 0
-            jump screen4show
-        elif car.compare(car.takeit, car.matchthis) == False:
-            jump bad_road
-
-label screen4show:
-        show screen minigame2
-        pause 1 
-        pause 3
-        hide screen minigame2
-
-        if car.compare(car.takeit, car.matchthis) == True:
-            $ car.addh()
-
-            $ car.takethis = 0
-            $ car.matchthis = 0
-            
+        if car.takeit == 4:
             return
-        elif car.compare(car.takeit, car.matchthis) == False:
+
+        else:
             jump bad_road
 
 

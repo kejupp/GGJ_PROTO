@@ -19,90 +19,29 @@ image Naomi neutral = "images/Naomi neutral.png"
 label start:
     play music "placeholder_music.wav"
 
-    # "Pop."
-
-    # "Such a simple sound."
-
-    # "But quite the same is said with such the nature of this allegory."
-
-    # "The residue of the bubble bursting lingers your mind, as you awake from a cold sweat."
-
-    # "Until now I can still hear it."
-
-    # "{i}Undeserving.{/i}"
-
-    # "... {w} Why did I even bother waking up today."
-
-    # "I drag my heavy body in the morning outside the door {w}to complete the debt that I owe to names unsaid."
-
-    # "Just then..."
-
-    # scene bg placeholder with fade
-
-    # show Naomi neutral
-
-    # unknown "{b}Good Morning!!!{/b} How are you, Honey?"
-
-    # "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
-
-    # unknown "How was your nap? Damn, you look like a ghost!"
-
-    # unknown "You were always a little dead inside though, weren't you?"
-
-    # "In front of me was Naomi. Shrewd though careless with her words, just like she'd always been."
-
-    # omi "Come on, come on! Everyone's waiting for us in the next room."
-
-    # "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
-
-    # scene bg placeholder2 with fade
-
-    # show Abaddon neutral at right
-
-    # baddie "Well well well! If it isn't the drag of the party! Jeez, you're a mess!"
-
-    # "You WILL die. It's a canon event."
-
-    # baddie "Looking forward to see you try and kill me."
-
-    # show Josie neutral at left
-
-    # jos "Ohh, come on! Don't be such a meanie."
-
-    # "How are you even up lmao i thought you were catatonic."
-
     menu:
         "Anyways, what do you choose?"
 
         "Good end!":
+            window hide
             call minigame from _call_minigame
-            jump bad_road
     
         "Bad end!":
+            "!! WATCH OUT!"
+            window hide
+            pause 1.0
             call screen2show
             jump good_road
 
-    # scene bg black
-
-# label after_minigame:
-#     # if bubble_game.bubbles_popped >= 12:
-#     #     "You popped all the bubbles!"
-#     # else:
-#     #     "Time ran out."
-
-#     scene bg placeholder
-
-
 label good_road:
     scene bg black
-    "You made a good choice!"
+    "You made the right choice!"
     return
 
 label bad_road:
     scene bg black
 
-    "You feel yourself losing consciousness..."
-    # {w=3.0}{nw}
-    # jump ending
+    "You feel yourself losing consciousness... {w=3.0}{nw}"
+    jump ending
 
 

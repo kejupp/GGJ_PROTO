@@ -66,38 +66,43 @@ screen credits():
     ## Adjust this number to control when the Credits screen is hidden and the game
     ## returns to its normal flow.
 
-    frame at credits_scroll(90.0): #bigger is slower
+    frame at credits_scroll(160): #bigger is slower
         ## Adjust this number to control the speed at which the credits scroll.
         background None
         xalign 0.5
 
         vbox:
             text "Made by"
-            null height 75
+            null height 10
             text "Team Milktea Fettuccine"
             null height 10
             text "For the Global Game Jam 2025"
-            null height 10
-
+            null height 75
 
             text "Programmers"
-            null height 75
-            text "redacted"
             null height 10
+            text "Justin Lu"
+            null height 10
+            text "Kat De Guzman"
+            null height 75
 
             text "Artists"
             null height 10
-            text "redacted"
+            text "Mari Gonzalez"
             null height 10
+            text "Marc Molina"
+            null height 75
 
             text "Writers"
             null height 10
-            text "redacted"
+            text "Andrei Yap"
             null height 10
+            text "Marc Molina"
+            null height 75
 
             text "Music and Sound design"
             null height 10
-            text "redacted"
+            text "Justin Lu"
             null height 10
 
 
