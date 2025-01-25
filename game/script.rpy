@@ -41,7 +41,7 @@ label start:
 
     show Naomi neutral
 
-    unknown "GOOOOODDD MORRRNNNINGG!!! HOW ARE YOU HONEYY?"
+    unknown "{b}Good Morning!!!{/b} How are you, Honey?"
 
     "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
 
@@ -70,50 +70,36 @@ label start:
     jos "Ohh, come on! Don't be such a meanie."
 
     "How are you even up lmao i thought you were catatonic."
-    scene bg bathtub
-    "Let's play the bubble-popping minigame."
 
-<<<<<<< HEAD
-    # Call the minigame label
-    call minigame
-
-<<<<<<< HEAD
     menu:
-
         "Anyways, what do you choose?"
-=======
-    jump after_minigame
+
+        "Good end!":
+            call minigame
+            jump after_minigame
+    
+        "Bad end!":
+            jump bad_road
+
+    scene bg black
+
+    "Let's play the bubble-popping minigame."
 
 label after_minigame:
     if bubble_game.bubbles_popped >= 12:
         "You popped all the bubbles!"
     else:
         "Time ran out."
-=======
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
 
     scene bg room
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
->>>>>>> main
 
-        "Good end!":
-            jump good_road
-        
-        "Bad end!":
-            jump bad_road
+# label good_road:
+#     scene bg black
+#     "You made a good choice!"
 
-
-label good_road:
-    scene bg black
-    "You made a good choice!"
-
-    "Game over."
-    return
+#     "Game over."
+#     return
 
 label bad_road:
     scene bg black

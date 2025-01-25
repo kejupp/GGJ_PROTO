@@ -263,7 +263,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -300,28 +300,29 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+        #     textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+        #     textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        # textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        # textbutton _("Preferences") action ShowMenu("preferences")
+            pass
 
         if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            pass
+            # textbutton _("End Replay") action EndReplay(confirm=True)
 
         elif not main_menu:
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        # textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+        #     ## Help isn't necessary or relevant to mobile devices.
+        #     textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
@@ -500,7 +501,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    # background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
