@@ -1,6 +1,5 @@
 init python:
     import random
-
     bubble_list = []
 
     def spawn_bubble():
