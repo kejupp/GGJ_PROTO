@@ -80,6 +80,7 @@ label start:
     
         "Bad end!":
             call screen2show
+            jump good_road
 
     # scene bg black
 
@@ -92,12 +93,10 @@ label start:
 #     scene bg placeholder
 
 
-# label good_road:
-#     scene bg black
-#     "You made a good choice!"
-
-#     "Game over."
-#     return
+label good_road:
+    scene bg black
+    "You made a good choice!"
+    return
 
 label bad_road:
     scene bg black
