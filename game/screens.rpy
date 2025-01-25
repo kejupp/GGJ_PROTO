@@ -286,17 +286,17 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.5
+        yalign 0.7
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start        ") action Start()
 
         else:
 
@@ -340,7 +340,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
-
+    xalign 0.5
 
 ## Main Menu screen ############################################################
 ##
@@ -365,14 +365,17 @@ screen main_menu():
 
     if gui.show_name:
 
-        vbox:
+        hbox:
             style "main_menu_vbox"
+
+            xalign 0.5
+            yalign 0.5
 
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+            #     style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -1141,30 +1144,30 @@ screen bubble_minigame():
 
 
     # Timer countdown
-    text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
+    # text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
 
     # Bubble counter
-    text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
+    # text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
 
     # Bubble spawning and popping
     timer 0.5 action If(not bubble_game.game_over and len(bubble_list) < 20, Function(spawn_bubble))
 
     # Repeated timer to update screen every 0.1 seconds
     timer 0.1 action Function(bubble_game.update_timer) repeat True
-    
+
     # Spawn bubbles every 1 second if game isn't over
-    timer 1.0 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
+    timer 0.3 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
 
     for i, bubble in enumerate(bubble_list):
         imagebutton:
             idle "bubble.png"
             action Function(bubble_game.pop_bubble), Function(remove_bubble, i)
             at bubble_move(bubble["x"], bubble["y"])
-
+        
     if bubble_game.game_over:
-        text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
-        timer 2.0 action Jump("after_minigame")
-
+        # text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
+        $ bubble_list.clear()
+        timer 0.5 action Jump("bad_road")
 
 ## Confirm screen ##############################################################
 ##

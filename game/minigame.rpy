@@ -5,7 +5,7 @@ init python:
     def spawn_bubble():
         global bubble_list
         new_bubble = ({
-            "x": random.randint(100, 600),  # Randomize X position
+            "x": random.randint(100, 1820),  # Randomize X position
             "y": 800  # Start from the bottom of the screen
         })
 
@@ -24,7 +24,7 @@ init python:
         def __init__(self):
             self.bubbles_popped = 0
             self.max_bubbles = 12
-            self.time_limit = 30 # seconds
+            self.time_limit = 15 # seconds
             self.game_over = False
             self.start_time = None
 

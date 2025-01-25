@@ -19,64 +19,64 @@ image Naomi neutral = "images/Naomi neutral.png"
 label start:
     play music "placeholder_music.wav"
 
-    "Pop."
+    # "Pop."
 
-    "Such a simple sound."
+    # "Such a simple sound."
 
-    "But quite the same is said with such the nature of this allegory."
+    # "But quite the same is said with such the nature of this allegory."
 
-    "The residue of the bubble bursting lingers your mind, as you awake from a cold sweat."
+    # "The residue of the bubble bursting lingers your mind, as you awake from a cold sweat."
 
-    "Until now I can still hear it."
+    # "Until now I can still hear it."
 
-    "{i}Undeserving.{/i}"
+    # "{i}Undeserving.{/i}"
 
-    "... {w} Why did I even bother waking up today."
+    # "... {w} Why did I even bother waking up today."
 
-    "I drag my heavy body in the morning outside the door {w}to complete the debt that I owe to names unsaid."
+    # "I drag my heavy body in the morning outside the door {w}to complete the debt that I owe to names unsaid."
 
-    "Just then..."
+    # "Just then..."
 
-    scene bg placeholder with fade
+    # scene bg placeholder with fade
 
-    show Naomi neutral
+    # show Naomi neutral
 
-    unknown "{b}Good Morning!!!{/b} How are you, Honey?"
+    # unknown "{b}Good Morning!!!{/b} How are you, Honey?"
 
-    "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
+    # "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
 
-    unknown "How was your nap? Damn, you look like a ghost!"
+    # unknown "How was your nap? Damn, you look like a ghost!"
 
-    unknown "You were always a little dead inside though, weren't you?"
+    # unknown "You were always a little dead inside though, weren't you?"
 
-    "In front of me was Naomi. Shrewd though careless with her words, just like she'd always been."
+    # "In front of me was Naomi. Shrewd though careless with her words, just like she'd always been."
 
-    omi "Come on, come on! Everyone's waiting for us in the next room."
+    # omi "Come on, come on! Everyone's waiting for us in the next room."
 
-    "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
+    # "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
 
-    scene bg placeholder2 with fade
+    # scene bg placeholder2 with fade
 
-    show Abaddon neutral at right
+    # show Abaddon neutral at right
 
-    baddie "Well well well! If it isn't the drag of the party! Jeez, you're a mess!"
+    # baddie "Well well well! If it isn't the drag of the party! Jeez, you're a mess!"
 
-    "You WILL die. It's a canon event."
+    # "You WILL die. It's a canon event."
 
-    baddie "Looking forward to see you try and kill me."
+    # baddie "Looking forward to see you try and kill me."
 
-    show Josie neutral at left
+    # show Josie neutral at left
 
-    jos "Ohh, come on! Don't be such a meanie."
+    # jos "Ohh, come on! Don't be such a meanie."
 
-    "How are you even up lmao i thought you were catatonic."
+    # "How are you even up lmao i thought you were catatonic."
 
     menu:
         "Anyways, what do you choose?"
 
         "Good end!":
-            call minigame
-            jump after_minigame
+            call minigame from _call_minigame
+            jump bad_road
     
         "Bad end!":
             jump bad_road
@@ -85,13 +85,13 @@ label start:
 
     "Let's play the bubble-popping minigame."
 
-label after_minigame:
-    if bubble_game.bubbles_popped >= 12:
-        "You popped all the bubbles!"
-    else:
-        "Time ran out."
+# label after_minigame:
+#     # if bubble_game.bubbles_popped >= 12:
+#     #     "You popped all the bubbles!"
+#     # else:
+#     #     "Time ran out."
 
-    scene bg room
+#     scene bg placeholder
 
 
 # label good_road:
@@ -104,7 +104,7 @@ label after_minigame:
 label bad_road:
     scene bg black
 
-    "You screwed up."
+    "You feel yourself losing consciousness...{w=3.0}{nw}"
 
     jump ending
 
