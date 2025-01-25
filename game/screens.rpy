@@ -241,21 +241,21 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-        pass
-        # hbox:
-        #     style_prefix "quick"
 
-        #     xalign 0.5
-        #     yalign 1.0
+        hbox:
+            style_prefix "quick"
 
-        #     textbutton _("Back") action Rollback()
-        #     textbutton _("History") action ShowMenu('history')
-        #     textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-        #     textbutton _("Auto") action Preference("auto-forward", "toggle")
-        #     textbutton _("Save") action ShowMenu('save')
-        #     textbutton _("Q.Save") action QuickSave()
-        #     textbutton _("Q.Load") action QuickLoad()
-        #     textbutton _("Prefs") action ShowMenu('preferences')
+            xalign 0.5
+            yalign 1.0
+
+            textbutton _("Back") action Rollback()
+            textbutton _("History") action ShowMenu('history')
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -300,14 +300,13 @@ screen navigation():
 
         else:
 
-            # textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history")
 
-            # textbutton _("Save") action ShowMenu("save")
-            pass
+            textbutton _("Save") action ShowMenu("save")
 
-        # textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load") action ShowMenu("load")
 
-        # textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -317,12 +316,12 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        # textbutton _("About") action ShowMenu("about")
+        textbutton _("About") action ShowMenu("about")
 
-        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-        #     ## Help isn't necessary or relevant to mobile devices.
-        #     textbutton _("Help") action ShowMenu("help")
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
@@ -381,11 +380,11 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
-# style main_menu_frame:
-#     xsize 420
-#     yfill True
+style main_menu_frame:
+    xsize 420
+    yfill True
 
-#     background "gui/overlay/main_menu.png"
+    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -1134,6 +1133,36 @@ style help_label_text:
 ################################################################################
 ## Additional screens
 ################################################################################
+
+
+screen bubble_minigame():
+    tag minigame
+
+
+    # Timer countdown
+    text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
+
+    # Bubble counter
+    text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
+
+    # Bubble spawning and popping
+    timer 0.5 action If(not bubble_game.game_over and len(bubble_list) < 20, Function(spawn_bubble))
+
+    # Repeated timer to update screen every 0.1 seconds
+    timer 0.1 action Function(bubble_game.update_timer) repeat True
+    
+    # Spawn bubbles every 1 second if game isn't over
+    timer 1.0 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
+
+    for i, bubble in enumerate(bubble_list):
+        imagebutton:
+            idle "bubble.png"
+            action Function(bubble_game.pop_bubble), Function(remove_bubble, i)
+            at bubble_move(bubble["x"], bubble["y"])
+
+    if bubble_game.game_over:
+        text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
+        timer 2.0 action Jump("after_minigame")
 
 
 ## Confirm screen ##############################################################
