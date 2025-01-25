@@ -2,16 +2,13 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-<<<<<<< HEAD
 define nao = Character("Naoki")
 define jos = Character("Josie")
 define unknown = Character("???")
 define baddie = Character("Abaddon")
 define omi = Character("Naomi")
-=======
 
 define e = Character("Eileen")
->>>>>>> main
 
 image Josie neutral = "images/Josie neutral.png"
 image Abaddon neutral = "images/Abaddon neutral.png"
@@ -20,7 +17,6 @@ image Naomi neutral = "images/Naomi neutral.png"
 # The game starts here.
 
 label start:
-<<<<<<< HEAD
     play music "placeholder_music.wav"
 
     "Pop."
@@ -74,10 +70,8 @@ label start:
     jos "Ohh, come on! Don't be such a meanie."
 
     "How are you even up lmao i thought you were catatonic."
-=======
     scene bg bathtub
     "Let's play the bubble-popping minigame."
->>>>>>> main
 
 <<<<<<< HEAD
     # Call the minigame label
