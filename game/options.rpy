@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("GGJ_PROTO1")
+define config.name = _("By the water's edge")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -106,7 +106,7 @@ define config.end_game_transition = None
 ## After the game has started, this can be changed with the "window show",
 ## "window hide", and "window auto" statements.
 
-define config.window = "auto"
+define config.window = "fullscreen"
 
 
 ## Transitions used to show and hide the dialogue window

@@ -1169,6 +1169,44 @@ screen bubble_minigame():
         $ bubble_list.clear()
         timer 0.5 action Jump("bad_road")
 
+
+screen minigame2():
+
+    tag minigame2
+    $ random  = random_screen()
+
+    if random == screen_list[0]:
+        add "wheel1.png"
+    elif random == screen_list[1]:
+        add "clutch2.png"
+    elif random == screen_list[2]:
+        add "accelerate3.png"
+    elif random == screen_list[3]:
+        add "break4.png"
+
+screen vehicle():
+    
+    imagebutton:
+        idle "steering_wheel.png"
+        xalign 0.0 
+        yalign 0.4
+
+    imagebutton:
+        idle "accelerator.png"
+        xalign 0.1
+        yalign 1.0
+
+    imagebutton:
+        idle "break.png"
+        xalign 0.3 
+        yalign 1.0
+    
+    imagebutton:
+        idle "clutch.png"
+        xalign 0.5
+        yalign 1.0
+
+
 ## Confirm screen ##############################################################
 ##
 ## The confirm screen is called when Ren'Py wants to ask the player a yes or no

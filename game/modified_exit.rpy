@@ -10,7 +10,7 @@ screen quit_cg():
     timer 1 action Jump("dialog")
 
 label dialog:
-    $ renpy.call_screen("dialog", "UGH")
+    $ renpy.call_screen("dialog", "Taking the easy way out I see. Go on then.")
 
 
 label screen_die:

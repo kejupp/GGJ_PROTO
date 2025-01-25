@@ -79,11 +79,9 @@ label start:
             jump bad_road
     
         "Bad end!":
-            jump bad_road
+            call screen2show
 
-    scene bg black
-
-    "Let's play the bubble-popping minigame."
+    # scene bg black
 
 # label after_minigame:
 #     # if bubble_game.bubbles_popped >= 12:
@@ -104,8 +102,8 @@ label start:
 label bad_road:
     scene bg black
 
-    "You feel yourself losing consciousness...{w=3.0}{nw}"
-
-    jump ending
+    "You feel yourself losing consciousness..."
+    # {w=3.0}{nw}
+    # jump ending
 
 

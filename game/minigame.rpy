@@ -44,6 +44,8 @@ init python:
 
     bubble_game = BubbleMinigame()
 
+
+
 label minigame:
     $ bubble_game.start_game()
     show screen bubble_minigame
@@ -55,3 +57,5 @@ transform bubble_move(x, y):
     xpos x
     ypos y
     linear 5.0 ypos -100  # Move the bubble upwards over 5 seconds
+
+
