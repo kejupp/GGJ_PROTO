@@ -1,11 +1,11 @@
-2025-01-25 04:16:05 UTC
+2025-01-25 02:31:16 UTC
 Windows-10-10.0.19045
 Ren'Py 8.3.4.24120703
 
 Early init took 0.21s
-Loading error handling took 0.08s
-Loading script took 0.37s
-Loading save slot metadata took 0.08s
+Loading error handling took 0.07s
+Loading script took 0.36s
+Loading save slot metadata took 0.07s
 Loading persistent took 0.00s
 Running init code took 0.12s
 Loading analysis data took 0.04s
@@ -25,13 +25,13 @@ Cleaning stores took 0.00s
 Init translation took 0.11s
 Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.08s
-Prepare screens took 0.37s
-Save pyanalysis. took 0.07s
+Analyze screens took 0.03s
+Save screen analysis took 0.07s
+Prepare screens took 0.31s
+Save pyanalysis. took 0.09s
 Save bytecode. took 0.07s
 Running _start took 0.00s
-Interface start took 0.97s
+Interface start took 0.80s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)

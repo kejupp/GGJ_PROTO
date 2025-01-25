@@ -39,7 +39,7 @@ label start:
 
     show Naomi neutral
 
-    unknown "{b}Good Morning!{/b} How are you, Honey?"
+    unknown "GOOOOODDD MORRRNNNINGG!!! HOW ARE YOU HONEYY?"
 
     "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
 
