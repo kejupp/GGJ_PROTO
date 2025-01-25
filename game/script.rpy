@@ -8,14 +8,19 @@ define e = Character("Eileen")
 # The game starts here.
 
 label start:
+    scene bg bathtub
+    "Let's play the bubble-popping minigame."
 
+    # Call the minigame label
+    call minigame
 
-    "...All we heard was a splash, then she was gone."
+    jump after_minigame
 
-    scene bg placeholder
+label after_minigame:
+    if bubble_game.bubbles_popped >= 12:
+        "You popped all the bubbles!"
+    else:
+        "Time ran out."
 
-    show eileen happy
-
-    e "That was crazyyy"
-
+    "Game over."
     return
