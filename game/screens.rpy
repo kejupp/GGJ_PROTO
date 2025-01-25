@@ -1171,40 +1171,46 @@ screen bubble_minigame():
 
 
 screen minigame2():
-
     tag minigame2
-    $ random  = random_screen()
 
-    if random == screen_list[0]:
-        add "wheel1.png"
-    elif random == screen_list[1]:
-        add "clutch2.png"
-    elif random == screen_list[2]:
-        add "accelerate3.png"
-    elif random == screen_list[3]:
-        add "break4.png"
+    if trigger == True:
+        if randomly == screen_list[0]:
+            add "wheel1.png"
+            $ car.set_matchthis(1)
+        elif randomly == screen_list[1]:
+            add "clutch2.png"
+            $ car.set_matchthis(2)
+        elif randomly == screen_list[2]:
+            add "accelerate3.png"
+            $ car.set_matchthis(3)
+        elif randomly == screen_list[3]:
+            add "break4.png"
+            $ car.set_matchthis(4)
 
-screen vehicle():
-    
-    imagebutton:
-        idle "steering_wheel.png"
-        xalign 0.0 
-        yalign 0.4
+    if bounce == True:
+        imagebutton:
+            idle "steering_wheel.png"
+            xalign 0.0 
+            yalign 0.4
+            action Function(car.set_takeit, 1)
 
-    imagebutton:
-        idle "accelerator.png"
-        xalign 0.1
-        yalign 1.0
+        imagebutton:
+            idle "clutch.png"
+            xalign 0.5
+            yalign 1.0
+            action Function(car.set_takeit, 2)
 
-    imagebutton:
-        idle "break.png"
-        xalign 0.3 
-        yalign 1.0
-    
-    imagebutton:
-        idle "clutch.png"
-        xalign 0.5
-        yalign 1.0
+        imagebutton:
+            idle "accelerator.png"
+            xalign 0.1
+            yalign 1.0
+            action Function(car.set_takeit, 3)
+
+        imagebutton:
+            idle "break.png"
+            xalign 0.3 
+            yalign 1.0
+            action Function(car.set_takeit, 4)
 
 
 ## Confirm screen ##############################################################
