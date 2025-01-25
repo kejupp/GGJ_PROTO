@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/minigame.rpy", line 49: 'action' is not a keyword argument or valid child of the screen statement.
-    action Return()
+File "game/minigame.rpy", line 11: 'action' is not a keyword argument or valid child of the screen statement.
+    action Jump("dialog")
+          ^
+
+File "game/minigame.rpy", line 19: 'action' is not a keyword argument or valid child of the screen statement.
+    action Jump("end_now")
           ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sat Jan 25 07:23:00 2025
+Sat Jan 25 10:08:06 2025

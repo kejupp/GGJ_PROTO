@@ -4,17 +4,46 @@ init python:
 
 
 label struggle:
-    # "Giving up already? Typical. Fine, have it your way. {w=3.0}{nw}"
-    call screen credits_cg
+    call screen quit_cg 
 
-label end_now:
+screen quit_cg():
+    timer 1 action Jump("dialog")
+
+label dialog:
+    $ renpy.call_screen("dialog", "UGH")
+
+
+label screen_die:
     $ leave()
 
-screen credits_cg():
-    add "placeholder cg"
-    timer 3 action Jump("credits_next")
+label after_endcg:
+    call screen dead
 
-label credits_next:
+screen dead:
+    add "placeholder cg"
+    timer 3 action Jump("end_now")
+
+
+screen dialog(message):
+    modal True
+    zorder 200
+    style_prefix "confirm"
+    add "bg black"
+
+    frame:
+        has vbox:
+            xalign .5
+            yalign .5
+            spacing 30
+        label _(message):
+            style "confirm_prompt"
+            xalign 0.5
+
+    timer 5 action Jump("after_endcg")
+    
+
+label ending:
+    # "Giving up already? Typical. Fine, have it your way. {w=3.0}{nw}"
     call screen credits
 
 transform credits_scroll(speed):
@@ -33,27 +62,43 @@ screen credits():
 
     style_prefix "credits"
 
-    timer 5 action Jump("end_now") #46.5 seconds
+    timer 5 action Return() #46.5 seconds
     ## Adjust this number to control when the Credits screen is hidden and the game
     ## returns to its normal flow.
 
-    frame at credits_scroll(80.0): #bigger is slower
+    frame at credits_scroll(90.0): #bigger is slower
         ## Adjust this number to control the speed at which the credits scroll.
         background None
         xalign 0.5
 
         vbox:
-            label "Credits" xalign 0.5
+            text "Made by"
             null height 75
-            label "Producer" xalign 0.5
+            text "Team Milktea Fettuccine"
+            null height 10
+            text "For the Global Game Jam 2025"
+            null height 10
+
+
+            text "Programmers"
             null height 75
-            text "BadMustard"
+            text "redacted"
+            null height 10
+
+            text "Artists"
             null height 10
             text "redacted"
             null height 10
-            text "redacted"
+
+            text "Writers"
             null height 10
             text "redacted"
+            null height 10
+
+            text "Music and Sound design"
+            null height 10
+            text "redacted"
+            null height 10
 
 
 style credits_hbox:
@@ -64,13 +109,6 @@ style credits_vbox:
     xalign 0.5
     text_align 0.5
 
-style credits_label_text:
-    xalign 0.5
-    justify True
-    size 125
-    text_align 0.5
-    color "#ff0000"
-
 style credits_text:
     xalign 0.5
     size 60
@@ -78,58 +116,5 @@ style credits_text:
     text_align 0.5
     color "#ffffff"
 
-# screen credits_real():
-
-#     add "bg black.png"
-
-#     ## Ensure that the game_menu screens can't be stopped
-#     key "K_ESCAPE" action NullAction()
-#     key "K_MENU" action NullAction()
-#     key "mouseup_3" action NullAction()
-
-#     style_prefix "credits"
-
-#     timer 5 action Jump("end_now") #46.5 seconds
-#     ## Adjust this number to control when the Credits screen is hidden and the game
-#     ## returns to its normal flow.
-
-#     frame at credits_scroll(80.0): #bigger is slower
-#         ## Adjust this number to control the speed at which the credits scroll.
-#         background None
-#         xalign 0.5
-
-#         vbox:
-#             label "Credits" xalign 0.5
-#             null height 75
-#             label "Producer" xalign 0.5
-#             null height 75
-#             text "BadMustard"
-#             null height 10
-#             text "redacted"
-#             null height 10
-#             text "redacted"
-#             null height 10
-#             text "redacted"
-
-
-# style credits_hbox:
-#     spacing 40
-#     ysize 30
-
-# style credits_vbox:
-#     xalign 0.5
-#     text_align 0.5
-
-# style credits_label_text:
-#     xalign 0.5
-#     justify True
-#     size 125
-#     text_align 0.5
-#     color "#ff0000"
-
-# style credits_text:
-#     xalign 0.5
-#     size 60
-#     justify True
-#     text_align 0.5
-#     color "#ffffff"
+label end_now:
+    $ leave()

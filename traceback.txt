@@ -1,24 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 63, in script
-    osi "Ohh, come on! Don't be such a meanie."
-Exception: Sayer 'osi' is not defined.
+  File "renpy/common/00start.rpy", line 279, in script
+    python:
+  File "renpy/common/00start.rpy", line 283, in <module>
+    renpy.call_in_new_context("_main_menu")
+  File "game/minigame.rpy", line 13, in script
+    $ renpy.call_screen("dialog", "UGH")
+ScriptError: could not find label 'blood_cg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 63, in script
-    osi "Ohh, come on! Don't be such a meanie."
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
-    Say.execute(self)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'osi' is not defined.
+  File "renpy/common/00start.rpy", line 279, in script
+    python:
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 283, in <module>
+    renpy.call_in_new_context("_main_menu")
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\game.py", line 377, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "game/minigame.rpy", line 13, in script
+    $ renpy.call_screen("dialog", "UGH")
+  File "C:\Users\Afos\Documents\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'blood_cg'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
 GGJ_PROTO1 1.0
-Sat Jan 25 07:56:49 2025
+Sat Jan 25 10:17:44 2025

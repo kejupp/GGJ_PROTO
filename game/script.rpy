@@ -15,6 +15,7 @@ image Naomi neutral = "images/Naomi neutral.png"
 # The game starts here.
 
 label start:
+    play music "placeholder_music.wav"
 
     "Pop."
 
@@ -36,7 +37,7 @@ label start:
 
     scene bg placeholder with fade
 
-    show Josie neutral
+    show Naomi neutral
 
     unknown "GOOOOODDD MORRRNNNINGG!!! HOW ARE YOU HONEYY?"
 
@@ -46,9 +47,9 @@ label start:
 
     unknown "You were always a little dead inside though, weren't you?"
 
-    "In front of me was Josie. Shrewd though careless with her words, just like she'd always been."
+    "In front of me was Naomi. Shrewd though careless with her words, just like she'd always been."
 
-    jos "Come on, come on! Everyone's waiting for us in the next room."
+    omi "Come on, come on! Everyone's waiting for us in the next room."
 
     "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
 
@@ -62,11 +63,11 @@ label start:
 
     baddie "Looking forward to see you try and kill me."
 
-    show naomi neutral at left
+    show Josie neutral at left
 
-    omi "Ohh, come on! Don't be such a meanie."
+    jos "Ohh, come on! Don't be such a meanie."
 
-    "ONG I will probably snap at you too."
+    "How are you even up lmao i thought you were catatonic."
 
 
     menu:
@@ -91,6 +92,6 @@ label bad_road:
 
     "You screwed up."
 
-    return
+    jump ending
 
 
