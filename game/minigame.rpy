@@ -2,16 +2,14 @@ init python:
     def leave():
         quit()
 
-
 label struggle:
     call screen quit_cg 
 
 screen quit_cg():
-    timer 1 action Jump("dialog")
+    timer 0.5 action Jump("dialog")
 
 label dialog:
-    $ renpy.call_screen("dialog", "UGH")
-
+    $ renpy.call_screen("dialog", "YOU ARE DEAD")
 
 label screen_die:
     $ leave()
@@ -21,7 +19,7 @@ label after_endcg:
 
 screen dead:
     add "placeholder cg"
-    timer 3 action Jump("end_now")
+    timer 2 action Jump("end_now")
 
 
 screen dialog(message):
@@ -39,7 +37,7 @@ screen dialog(message):
             style "confirm_prompt"
             xalign 0.5
 
-    timer 5 action Jump("after_endcg")
+    timer 3 action Jump("after_endcg")
     
 
 label ending:
