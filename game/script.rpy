@@ -2,25 +2,108 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define nao = Character("Naoki")
+define jos = Character("Josie")
+define unknown = Character("???")
+define baddie = Character("Abaddon")
+define omi = Character("Naomi")
+
 define e = Character("Eileen")
 
+image Josie neutral = "images/Josie neutral.png"
+image Abaddon neutral = "images/Abaddon neutral.png"
+image Naomi neutral = "images/Naomi neutral.png"
 
 # The game starts here.
 
 label start:
-    scene bg bathtub
-    "Let's play the bubble-popping minigame."
+    play music "placeholder_music.wav"
 
-    # Call the minigame label
-    call minigame
+    # "Pop."
 
-    jump after_minigame
+    # "Such a simple sound."
 
-label after_minigame:
-    if bubble_game.bubbles_popped >= 12:
-        "You popped all the bubbles!"
-    else:
-        "Time ran out."
+    # "But quite the same is said with such the nature of this allegory."
 
-    "Game over."
-    return
+    # "The residue of the bubble bursting lingers your mind, as you awake from a cold sweat."
+
+    # "Until now I can still hear it."
+
+    # "{i}Undeserving.{/i}"
+
+    # "... {w} Why did I even bother waking up today."
+
+    # "I drag my heavy body in the morning outside the door {w}to complete the debt that I owe to names unsaid."
+
+    # "Just then..."
+
+    # scene bg placeholder with fade
+
+    # show Naomi neutral
+
+    # unknown "{b}Good Morning!!!{/b} How are you, Honey?"
+
+    # "The voice is shrill, but this time I could tell. Something so sickeningly sweet can't be real."
+
+    # unknown "How was your nap? Damn, you look like a ghost!"
+
+    # unknown "You were always a little dead inside though, weren't you?"
+
+    # "In front of me was Naomi. Shrewd though careless with her words, just like she'd always been."
+
+    # omi "Come on, come on! Everyone's waiting for us in the next room."
+
+    # "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
+
+    # scene bg placeholder2 with fade
+
+    # show Abaddon neutral at right
+
+    # baddie "Well well well! If it isn't the drag of the party! Jeez, you're a mess!"
+
+    # "You WILL die. It's a canon event."
+
+    # baddie "Looking forward to see you try and kill me."
+
+    # show Josie neutral at left
+
+    # jos "Ohh, come on! Don't be such a meanie."
+
+    # "How are you even up lmao i thought you were catatonic."
+
+    menu:
+        "Anyways, what do you choose?"
+
+        "Good end!":
+            call minigame from _call_minigame
+            jump bad_road
+    
+        "Bad end!":
+            call screen2show
+
+    # scene bg black
+
+# label after_minigame:
+#     # if bubble_game.bubbles_popped >= 12:
+#     #     "You popped all the bubbles!"
+#     # else:
+#     #     "Time ran out."
+
+#     scene bg placeholder
+
+
+# label good_road:
+#     scene bg black
+#     "You made a good choice!"
+
+#     "Game over."
+#     return
+
+label bad_road:
+    scene bg black
+
+    "You feel yourself losing consciousness..."
+    # {w=3.0}{nw}
+    # jump ending
+
+

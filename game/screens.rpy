@@ -241,21 +241,21 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-        pass
-        # hbox:
-        #     style_prefix "quick"
 
-        #     xalign 0.5
-        #     yalign 1.0
+        hbox:
+            style_prefix "quick"
 
-        #     textbutton _("Back") action Rollback()
-        #     textbutton _("History") action ShowMenu('history')
-        #     textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-        #     textbutton _("Auto") action Preference("auto-forward", "toggle")
-        #     textbutton _("Save") action ShowMenu('save')
-        #     textbutton _("Q.Save") action QuickSave()
-        #     textbutton _("Q.Load") action QuickLoad()
-        #     textbutton _("Prefs") action ShowMenu('preferences')
+            xalign 0.5
+            yalign 1.0
+
+            textbutton _("Back") action Rollback()
+            textbutton _("History") action ShowMenu('history')
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -263,7 +263,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -286,32 +286,32 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.5
+        yalign 0.7
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start        ") action Start()
 
         else:
 
-            # textbutton _("History") action ShowMenu("history")
+        #     textbutton _("History") action ShowMenu("history")
 
-            # textbutton _("Save") action ShowMenu("save")
-            pass
+        #     textbutton _("Save") action ShowMenu("save")
 
         # textbutton _("Load") action ShowMenu("load")
 
         # textbutton _("Preferences") action ShowMenu("preferences")
+            pass
 
         if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            pass
+            # textbutton _("End Replay") action EndReplay(confirm=True)
 
         elif not main_menu:
 
@@ -328,7 +328,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit") action Jump("struggle")
 
 
 style navigation_button is gui_button
@@ -340,7 +340,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
-
+    xalign 0.5
 
 ## Main Menu screen ############################################################
 ##
@@ -365,14 +365,17 @@ screen main_menu():
 
     if gui.show_name:
 
-        vbox:
+        hbox:
             style "main_menu_vbox"
+
+            xalign 0.5
+            yalign 0.5
 
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+            #     style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -381,11 +384,11 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
-# style main_menu_frame:
-#     xsize 420
-#     yfill True
+style main_menu_frame:
+    xsize 420
+    yfill True
 
-#     background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -501,7 +504,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    # background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1141,29 +1144,67 @@ screen bubble_minigame():
 
 
     # Timer countdown
-    text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
+    # text "Time Left: [30 - int(renpy.get_game_runtime() - bubble_game.start_time)]"
 
     # Bubble counter
-    text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
+    # text "Bubbles Popped: [bubble_game.bubbles_popped]/12" xpos 0.05 ypos 0.1 color "#FFF"
 
     # Bubble spawning and popping
     timer 0.5 action If(not bubble_game.game_over and len(bubble_list) < 20, Function(spawn_bubble))
 
     # Repeated timer to update screen every 0.1 seconds
     timer 0.1 action Function(bubble_game.update_timer) repeat True
-    
+
     # Spawn bubbles every 1 second if game isn't over
-    timer 1.0 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
+    timer 0.3 action If(not bubble_game.game_over, Function(spawn_bubble)) repeat True
 
     for i, bubble in enumerate(bubble_list):
         imagebutton:
             idle "bubble.png"
             action Function(bubble_game.pop_bubble), Function(remove_bubble, i)
             at bubble_move(bubble["x"], bubble["y"])
-
+        
     if bubble_game.game_over:
-        text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
-        timer 2.0 action Jump("after_minigame")
+        # text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
+        $ bubble_list.clear()
+        timer 0.5 action Jump("bad_road")
+
+
+screen minigame2():
+
+    tag minigame2
+    $ random  = random_screen()
+
+    if random == screen_list[0]:
+        add "wheel1.png"
+    elif random == screen_list[1]:
+        add "clutch2.png"
+    elif random == screen_list[2]:
+        add "accelerate3.png"
+    elif random == screen_list[3]:
+        add "break4.png"
+
+screen vehicle():
+    
+    imagebutton:
+        idle "steering_wheel.png"
+        xalign 0.0 
+        yalign 0.4
+
+    imagebutton:
+        idle "accelerator.png"
+        xalign 0.1
+        yalign 1.0
+
+    imagebutton:
+        idle "break.png"
+        xalign 0.3 
+        yalign 1.0
+    
+    imagebutton:
+        idle "clutch.png"
+        xalign 0.5
+        yalign 1.0
 
 
 ## Confirm screen ##############################################################
