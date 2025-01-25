@@ -5,6 +5,12 @@
 define nao = Character("Naoki")
 define jos = Character("Josie")
 define unknown = Character("???")
+define baddie = Character("Abaddon")
+define omi = Character("Naomi")
+
+image Josie neutral = "images/Josie neutral.png"
+image Abaddon neutral = "images/Abaddon neutral.png"
+image Naomi neutral = "images/Naomi neutral.png"
 
 # The game starts here.
 
@@ -42,6 +48,27 @@ label start:
 
     "In front of me was Josie. Shrewd though careless with her words, just like she'd always been."
 
+    jos "Come on, come on! Everyone's waiting for us in the next room."
+
+    "??? HOW DID YOU GUYS GET INTO MY HOUSE?"
+
+    scene bg placeholder2 with fade
+
+    show Abaddon neutral at right
+
+    baddie "Well well well! If it isn't the drag of the party! Jeez, you're a mess!"
+
+    "You WILL die. It's a canon event."
+
+    baddie "Looking forward to see you try and kill me."
+
+    show naomi neutral at left
+
+    omi "Ohh, come on! Don't be such a meanie."
+
+    "ONG I will probably snap at you too."
+
+
     menu:
 
         "Anyways, what do you choose?"
@@ -54,13 +81,13 @@ label start:
 
 
 label good_road:
-    scene bg placeholder2
+    scene bg black
     "You made a good choice!"
 
     return
 
 label bad_road:
-    scene bg placeholder2
+    scene bg black
 
     "You screwed up."
 
