@@ -66,7 +66,7 @@ screen credits():
     ## Adjust this number to control when the Credits screen is hidden and the game
     ## returns to its normal flow.
 
-    frame at credits_scroll(160): #bigger is slower
+    frame at credits_scroll(300): #bigger is slower
         ## Adjust this number to control the speed at which the credits scroll.
         background None
         xalign 0.5
@@ -90,8 +90,6 @@ screen credits():
             null height 10
             text "Mari Gonzalez"
             null height 10
-            text "Marc Molina"
-            null height 75
 
             text "Writers"
             null height 10

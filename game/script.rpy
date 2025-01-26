@@ -7,11 +7,10 @@ define jos = Character("Josie")
 define unknown = Character("???")
 define bad = Character("Kitarou")
 define omi = Character("Naomi")
+define cute = Character("Ichigo")
 
-image Naoki neutral = "images/Naoki neutral.png"
 image Kitarou neutral = "images/Kitarou neutral.png"
 image Naomi neutral = "images/Naomi neutral.png"
-image Naoki surprised = "images/Naoki surprised.png"
 image Kitarou annoyed = "images/Kitarou annoyed.png"
 image Naomi excited = "images/Naomi excited.png"
 
@@ -27,392 +26,472 @@ label start:
     "Appearing so sudden I swear that I can see flashes of a different life in each one."
     "{i}Pop.{i}"
     "Just like that."
-    "Like a bad dream you once had, burst into reality without your permission."
-    "Even today I can still hear it."
+    "Like a bad dream you once had, bursting into reality without your permission."
     "..."
     "...{w}Today is just another day once again.{w}"
-    "Even walking the morning steps is just a reminder that I am to walk for someone who isn't here anymore"
+    "Even walking the morning steps is just a reminder that I'm walking for someone who isn't here anymore."
     "It's heavy."
     "..."
 
-    "Why do I hear footsteps?"
+    "... {w} Why do I hear footsteps?"
     
-    "{i}Rapid light footsteps echo across the house, followed by someone with rosy cheeks and bubbly attire.{/i}{w=4}{nw}"
+    "{i}Rapid thuds echo across the house, bringing along someone with rosy cheeks and bubbly attire.{/i}{w=4}{nw}"
 
     show Naomi excited at center with moveinleft
     omi "{b} Good Morning!!!{/b} How are you, honey?"
 
     scene bg kitchen
 
-    "{i}Her petite stature peeks through under the door frame.{i}"
+    "{i}Her petite stature peeks through the door frame.{i}"
 
     show Naomi excited with fade:
         yalign 1
 
+    "Her skittery pace and piercing tone make me flinch in exasperation."
+    
+    unknown "Don't call me that."
 
-    menu:
-        "Anyways, what do you choose?"
-
-        "Good end!":
-            window hide
-            call minigame from _call_minigame
-
-
-
-
-
-    Her skittery pace and piercing tone make me flinch in exasperation.
-    nao "Don't call me that."
-    omi "Darllingg dont be so harsh, Our names even rhyme. Its like we were meant to be ."
+    omi "Darllingg, dont be so harsh! Our names even rhyme. Naoki and Naomi! It's like we were meant to be!"
 
     nao "How'd you even get in? I'm pretty sure I locked the door last night."
 
-    omi "Oh don't mind that, I just let myself with the spare key you leave under the rock"
+    omi "Oh don't mind that, I just let myself in with the spare key you leave under the rock!"
 
-    nao "Oh… I should change where I hide my spare better next time."
+    nao "Oh… I should change where I hide my spare key better next time."
 
-    omi "So are you ready???"
+    omi "So are you ready?"
 
-    nao "Is Kitaro coming?."
+    nao "...{w}Is Kitaro coming?"
 
-    omi "Im not sure yet, I actually haven't seen him in a while"
+    show Naomi neutral:
+        yalign 1
+
+    omi "Im not sure yet. I actually haven't seen him in a while!"
 
     nao "Well then. Shall we go?"
 
-    omi "YEP"
+    show Naomi excited:
+        yalign 1
+
+    omi "Yep!"
 
     jump hospital
 
 label hospital:
 
-    scene bg black
+    scene bg emergency with fade
 
     "The car ride on the way there could not have been longer."
     "I'm pretty sure if she had squealed a couple more times I wouldve crashed into the tree myself."
-    "As the hospital was in sight, time somehow felt longer as I had to bear with the mobile chatterbox."
+    "Time somehow felt longer as I had to bear with the mobile chatterbox."
 
-    scene bg hospitalOut
-
-    "We parked around the corner of the block and walked towards the entrance of the hospital"
+    "We parked around the corner of the block and walked towards the entrance of the hospital."
     "We were warmly greeted by the swinging glass doors of the medical instituition."
 
-    scene bg hospitalRcpt
+    scene bg reception with fade
 
-    "It looks somewhat overwhelming"
+    "It's overwhelming."
 
-    "You look kinda lost"
-    "Do you remember what room shes in???"
+    show Naomi neutral:
+        yalign 1
 
-    "No…"
+    omi "...You look kinda lost."
 
-    "HEY, Don’t worry about it lets just go ask people who work here."
+    omi "Do you know what room she's in?"
 
-    "Well we just cant ask anyone."
+    nao "No…"
 
-    "Lets go find the receptionist then, kay?"
+    omi "Hey, Don’t worry about it! let's just go ask people who work here."
 
-    "Yeah, ok."
+    nao "We just can't ask anyone."
 
-    scene bg hospitalCorridor
+    omi "Lets go find the receptionist then, 'kay?"
 
-    "Me and Naomi ask around the reception for a specific room number of our friend."
+    nao "Yeah, ok."
 
-    "After a bit of back and forth we managed to finally come by their room number.
-    "As we walk down the hallway, we turn quiet for whats about to come."
+    scene bg hospitalhall
 
-    "Nao, still remember the room number?"
+    "{i}Me and Naomi ask the receptionist for the room number of our friend. {/i}"
 
-    nao "Yeah , it was room number 4 if I remember."
+    "{i}After a bit of back and forth we managed to finally come by the information. {/i}"
 
-    nao "Were here"
-    nao "Are you ok Naomi?"
+    "{i}As we walk down the hallway, we turn quiet for whats about to come.{/i}"
 
-    "Yeah im ok."
-    "Are you?"
+    show Naomi neutral:
+        yalign 1
 
-    nao "Well, Ill have to be."
+    omi "Nao, still remember the room number?"
 
-    scene bg hospitalRoom
+    nao "Yeah. It was room number 401."
 
-    "The door slowly opens into the windy room with the curtains breezing towards us they dance around as if theyre praying to some God for a miracle of some sorts."
+    nao "...{w}We're here."
+    nao "...{w}Are you ok Naomi?"
 
-    "There we have her, our dear friend splayed with her poor remains splayed all over the hospital bed."
-    "Like a desecrated mummy wrapped up and with an expressionless gaze into the white wall in front of her."
-    "Her eyes jolt from the thousand yard stare into me and Naomi’s souls as we appear into sight."
-    <Fear>
-    "She starts flailing with her limbless arms and starts screaming with incorrigible words."
+    omi "Yeah, I'm ok."
+    omi "...{w}Are you?"
 
-    "Josie is disturbed. It's as if she saw a monster and lost all sense of humanity."
-    "It was like watching an animal being slaughtered, Begging for its life."
+    hide Naomi neutral
 
-    "The room is quickly filled with sounds of screaming and wails of pain that reminded me of Ichigo"
+    "..."
 
-    "Oh my."
+    nao "Well, I'll have to be."
 
-    "Oh God"
+    scene bg josie with fade
 
-    "Gagging, holding in my reaction from painting the white tiles with my breakfast became harder with each second I stood there."
+    "{i}The door welcomes us into a windy room.{/i}" 
+    "{i}The curtains by the open window danced around, like frenzied praying to some God for a miracle of some sorts.{/i}"
 
-    "My knees felt weak and my world was spinning around violently."
+    "{i}There she was, in the center of the room, with large machines surrounding her.{/i}"
 
-    "The nurse rushes in and comforts Josie's episode"
-    "-Calm down hun, shh shh shh, its alright,-"
-    "you guys should leave for now. Come back tomorrow."
+    "{i}She looked like a desecrated mummy wrapped up and held an expressionless gaze against the white wall in front of her.{/i}"
+    "{i}Her eyes suddenly jolt from a thousand yard stare towards me and Naomi as we enter.{/i}"
 
-    "Me and Naomi leave the room in a mess with our backs turned against what was left of my friend."
+    "..."
 
-    scene bg hospitalCorridor
+    "{i}She suddenly starts flailing with her limbless arms and starts screaming with incorrigible words.{/i}"
 
-    "Oh God, why her. What did we do to deserve this."
-    "Its all my fault. If I had never eve-"
+    "{i}Josie is disturbed. It's as if she saw a monster and lost all sense of humanity.{/i}"
+    "{i}It was like watching a helpless animal begging for its life{/i}."
 
-    "Shhhh, its not your fault. Don’t worry about it too much. At least shes still alive"
+    "{i}The room is quickly filled with sounds of screaming and wails of pain that reminded me of Ichigo.{/i}"
 
-    "AT LEAST? LOOK AT HER. SHE CAN'T EVEN WALK ANYMORE LET ALONE TALK TO US."
+    show Naomi neutral:
+        yalign 1
 
-    "We both stare in silence at the door as the awkwardness creeps in enough for her to make senseless noise again."
+    omi "Oh my."
 
-    "So Kitaro didn’t show up huh, Who would've thought. I guess the accident affected that crybaby more than you."
+    nao "Oh God..."
 
-    "Sure."
+    hide Naomi neutral
 
-    "Kitaro walks in"
+    "{i}Gagging, I turned away. Each second I stood there made it hard to hold in my breakfast.{/i}"
 
-    "Heard my name at the edge of the corridor"
-    "whats up?"
+    "{i}My knees felt weak and the world was spinning around violently.{/i}"
 
-    "Speak of the Devil"
+    "{i}The nurses rush in and comfort Josie.{/i}"
 
-    "what were you saying about me again?"
+    "{i}One of them approaches us with eyes of concern. She tells us to come back tomorrow. {/i}"
 
-    "ABOUT HOW NICE, SWEET AND BRAVE YOU ARE."
+    "{i}Me and Naomi leave the room in a mess with our backs turned against what was left of my friend.{/i}"
 
-    "Sure"
-    "sure, anyway"
+    scene bg hospitalhall
 
-    "hey, since I was late and all. Wanna get dinner at my place? my treat."
+    show Naomi neutral at center with fade:
+        yalign 1
 
-    "Sorry I cant, I have to go now. I have somewhere to go this evening."
+    omi "Oh God... why her... What did we do to deserve this?"
 
-    "oh wow okay, So I guess it's like that then."
+    nao "It's... {w} It's all my fault. {w} If I'd never--"
 
-    "Yes it IS like that"
+    omi "Shhhh, it's not. Don’t worry about it too much..."
 
-    "Well, anyway"
+    omi "At least she's still alive."
 
-    "BYEEEE NAOKI, SEE YOU TOMORROWWWW"
-    "ILL MISSS YOUUUU"
+    hide Naomi neutral
 
-    "I guess its just you and me then."
+    "{i}I turn to her in anger, voice raised and fists clenched.{/i}"
 
-    "Guess so"
+    nao "AT LEAST?!" 
 
-    "So"
-    "you free to come over?"
-    "im gonna grab some takeaway steak."
+    nao "LOOK AT HER. SHE CAN'T WALK ANYMORE, LET ALONE TALK TO US."
 
-    "fine"
+    "{i}We both stare in silence at the door as the awkwardness creeps in enough for her to make senseless noise again.{/i}"
 
-    scene bg car
+    show Naomi neutral at center:
+        yalign 1
 
-    "We take a car to his place and have a steak dinner that we got from petes steakout house."
+    omi "So, Kitaro didn’t show up huh? Who would've thought! {w} I guess the accident affected that loser more than you."
 
-    "Kitaro bragged about all the things he bought or flaunted to other people during the entire car ride."
-    "I guess I'm now one of those victims."
+    nao "...{w}Sure."
 
-    "We get off the vehicle that he praises so much and into the walkway of his modern bungalow"
+    hide Naomi neutral
 
-    "hey make yourself at home Kieta."
+    "{i}Right then and there, we hear a voice round the corner of the hall. {/i}"
 
-    "Okay."
+    show Kitarou neutral at left:
+        yalign 1
 
-    "As I take off my shoes and leave them by the entrance."
-    "Kitaro initiates small talk in order to make me feel less awkward around him."
-    "As we exchange common questions back and forth, he starts to set the table for dinner."
+    bad "Heard you two talking about me. What's up?"
 
-    "So what have you been up to this past month?"
+    hide Kitarou neutral
 
-    "Ive just been sleeping in from time to time. Trying to wrap my head around everything."
+    "{i}Speak of the Devil.{/i}"
 
-    "Well just to remind you, I lost more that day than you. I lost my Boat remember?"
-     "But I still cant believe that Ichigo is gone now, It was so sudden"
+    show Kitarou neutral at left:
+        yalign 1
 
-    "That line struck you enough to catch your attention."
-    "Just hearing her name was enough for you to remember her"
-    "It sends you to reminisce memories with her"
+    bad "What were you saying about me again?"
 
-    "Hi Naoki"
+    show Naomi excited at right:
+        yalign 1
 
-    "Ichigo…."
+    omi "A-About how nice, sweet, and brave you are~ !"
 
-    "do you miss me already?"
+    "{i}Veeeery subtle, Naomi. {/i}"
 
-    "Why did you leave me…"
+    bad "...Sure. {w} Anyways..."
 
-    "That wasn't my choice to make."
-    "It was simply my time."
+    bad "Hey, since I was late and all, wanna get lunch at my place? We'll order food, it's my treat!"
 
-    "BUT I'M NOT READY TO LET YOU GO"
+    omi "Ohh, so sorry but I can't! I gotta go now! I have a spa treatment at 2pm!"
 
-    "Do you think you'll ever be ready?"
+# i am disliking kitarou LMAOOO
+# "where's my hug" type guy cndsnfsnva
 
-    "I- I don't know"
+    "{i} His brows furrow at her excuse to absolutely not hang out with him (I don't blame her) and it thoroughly annoys me. {/i}"
 
-    "when you are."
-    "I'll see you."
-    "its like only I lost something that day"
+    bad "Oh wow okay, So I guess it's like that then."
 
-    "That line snaps you back into reality."
+    nao "Yes, it IS like that, dummy! You certainly look like you could use the spa too though, those legs need waxing!"
 
-    "hey!"
-    "are you even listening to me?"
-    "I cant believe I let you into my house, and forgive you for my boat."
-    "And THIS is how you treat ME?"
+    show Naomi excited at right:
+        yalign 1
 
-    "Im so sorry."
+    "{i} Naomi whips around, looking at me without remorse as she leaves me with HIM. {/i}"
 
-    "Yeah, you should be."
+    omi "OMG Ok ok so Bye-bye Naoki, see you tomorrow!! {w} MWAH MWAH HUGS AND KISSES XOXOXOOO"
 
-    "huh."
+    hide Naomi excited
 
-    "If it weren't for you, none of this would've happened."
-    "I would have been cruising the TROPICS by now."
+    "{i} And just like that, she's off to talk someone else's ears off. {/i}"
 
-    "…"
-    "Lets not forget what happened to them"
-    "I mean look at them, Naomi tries so hard to put up a front"
-    "and Josie?"
+    bad "I guess it's just you and me then."
 
-    "SHE'S JUST LIVING BECAUSE NO ONES BRAVE ENOUGH TO SUGGEST EUTHANIZING THAT DEFORMED VEGETABLE."
+    "{i} {w=3}Sh*t. {/i}"
 
-    "why…"
+    nao "...{w}Guess so"
 
-    "WHAT'S WORSE. MY BOAT IS TRASHED AND THAT THORN OF A BITCH DIED ON MY PROPERTY."
+    bad "So..."
 
-    "I gripped my fork and knife pointed upward."
-    "Gritting my teeth and glaring at him."
+    "{i} He turns to me expectantly, with a mug only a really specific mother would love. {/i}"
 
-    "OH, SO NOW YOU'RE THREATENING ME?"
+    bad "You free to come over? I'm gonna grab some takeaway steak."
 
-    "DO YOU KNOW HOW EASY IT IS TO STAGE ANOTHER MURDER AND BLAME IT ON SOME POOR GUY LIKE YOU?"
+    nao "...Fine"
 
-    "What."
-    "Did"
-    "You"
-    "Say???"
+    scene bg kitchen with fade
 
+    "{i} We take the car to his place and order a steak dinner from Pete's steakhouse on the way. {/i}"
 
-    "OH"
-    "haha, You weren't supposed to hear that."
-    "A slip of the tongue I guess."
-    "actually"
-    "Sometimes."
-    "i'm glad I killed that whore"
-    "She annoyed me most when she resisted my advances"
+    "{i} Kitaro bragged about everything he bought or flaunted to anyone who was unfortunate enough to listen during the entire car ride. {/i}"
 
-    "Im going to kill him"
+    "{i} I guess I'm now one of those victims. Again.{/i}"
 
-    "SO WHAT IF I TOLD YOU."
-    "WHAT ARE YOU GOING TO DO ABOUT IT?"
-    "YOU AND YOUR PATHETIC LITTLE GIRLFRIEND SHOULD HAVE DIED IN THE SAME DITCH"
-    "WAHAHAHAHHAHAHAH"
+    "{i}We get out of the sports car that he praises so much and into the walkway of his \"two-floor bungalow\". His words, not mine.  {/i}"
 
-    "I grip the knife that I was just cutting steak with in a firm manner."
-    "And I pounce over the table knocking everything off of it,"
-    "from the centerpiece to the dinner we just took a bite of."
+    show Kitarou neutral at center:
+        yalign 1
 
-    "He resists and strikes me in the liver with his fist."
-    "I forgot he used to do Martial arts."
+    bad "Make yourself at home!"
 
-    "I plunge the steak knife deep into the side of his neck with his smug grin as it fades into an annoyed yet sly smirk."
+    nao "...Okay."
 
-    "Driving my hand repeatedly to do something that feels unjust and unnatural, the blood sputters out instead of the screams that would've been."
+    hide Kitarou neutral
 
-    "*Gurgled Laughing*"
+    "{i} As I take off my shoes and leave them by the door, Kitaro tries small talk to lighten the mood. {/i}"
+    "{i} We continue to catch up as he sets up the table for lunch. {/i}"
 
-    "The static ringing from the adrenaline and blinding rage numbs the facet of my actions"
+    show Kitarou neutral at center:
+        yalign 1
 
-    "A flurry of stabs missing the mark of his mouth to keep him from uttering anymore words and plenty to his heart to keep his vile body from doing anymore harm to anyone else."
+    bad "So what have you been up to this past month?"
 
-    "It was like my hand was guided to his throat to cease him from sputtering anymore vile things."
+    nao "I've just been sleeping in from time to time. {w} Trying to... uh, wrap my head around everything."
 
-    "I kept going."
+    bad "Well, just to remind you, I lost my boat during \" everything \", remember? The one with the new paint job?"
 
-    "Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again."
-    "Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again."
-    "Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again."
-    "Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again and Again."
-    
-        "Bad end!":
-            "!! WATCH OUT!"
-            window hide
-            pause 1.0
-            call screen2show
-            jump good_road
+    hide Kitarou neutral
 
-    "Time has stopped."
+    "{i} The boat. {/i}"
+
+    show Kitarou neutral at center:
+        yalign 1
+
+    bad "Damn. I still can't believe that Ichigo is gone now. It was so sudden."
+
+    hide Kitarou neutral
+
+    "{i} Ichigo. {/i}"
+    "{i} Just hearing her name was enough. {/i}"
+    "{i} It sends me spiraling into memories I tried to bury... {w} memories I'd hope to forget along with the pain. {/i}"
+
+    scene bg black
+
+    show Ichigo excited at center
+
+    cute "Hi, Naoki!"
+
+    nao "Ichigo…."
+
+    cute "Do you miss me already?"
+
+    "{i} This... this isn't real... {/i}"
+
+    nao "Why did you leave me…"
+
+    cute "... That ... {w} wasn't my choice to make, dear. "
+
+    "{i} I'm chasing after a breeze, a slight wind that knocked me off my feet whenever she entered the room. It's agony.{/i}"
+
+    nao "BUT-- I'M NOT READY TO LET YOU GO!"
+
+    cute "...Do you think you'll ever be ready?"
+
+    "{i} Her question catches me off guard. It's too soon. Far, far too soon for me to miss her this much.{/i}"
+
+    nao "I-- {w} I don't know."
+
+    cute "When you are, I'll see you in our favorite place, 'kay?"
+
+    hide Ichigo excited
+
+    "{i} Her ghost leaves me in this temporal state of pain, like I'm not even real. She fades away and I'm alone.{/i}"
+
+    "{i} It's like... {w} only I lost something that day.{/i}"
+
+    "{i}I snap back into reality. {/i}"
+
+    scene bg kitchen with fade
+
+    show Kitarou neutral at center:
+        yalign 1
+
+    bad "Hey! Earth to Naoki! You still with me buddy?"
+
+    "{i} A few seconds later, I'm back at the dining table facing Kitaro.{/i}"
+
+    show Kitarou annoyed at center:
+        yalign 1
+
+    bad "Are you even listening to me? I can't believe I let you into my home, even after the whole damn boat thing!"
+    bad "I pay hundreds in insurance, and THIS is how you treat ME?"
+
+    nao "...I'm sorry."
+
+    bad "Yeah, you sure as hell should be."
+
+    bad "If it weren't for you, none of this would've happened. I would have been cruising the TROPICS by now."
+
+    nao "…"
+
+    bad "Let's not forget how boring everything got after."
+    bad "I mean look, Naomi tries so hard to put up a front, even with all her stupid appointments!"
+    bad "And Josie? Let's be real, she's alive 'cuz her mom owns the hospital."
+    bad "I couldn't imagine not being able to drive my car looking like that. Yeesh"
+    bad "What's worse, my boat's gone and your chick died on my property! What a load of--"
+
+    "{i} I gripped my fork and knife pointed upward. {w} What the hell? Who the hell says these kinds of things? {/i}"
+    "{i} I grit my teeth and glare at him. Enough is enough. {/i}"
+
+    "{i} He stands up from the other end of the table as he sees my anger. {/i}"
+
+    bad "Oh, so now you wanna fight me? In MY own home?"
+
+    hide Kitarou annoyed
+
+    "{i} He chuckles, then says something I couldn't believe. {/i}"
+
+    show Kitarou annoyed at center:
+        yalign 1
+
+    bad "Do you know how EASY it was to stage a murder and blame it on some dumbass like you?"
+
+
+    nao "What {w=3}{nw}the {w=3}{w}hell?"
+
+    hide Kitarou annoyed
+
+    "{i} He drops his grin and replaces it with a sadistic smile. {/i}"
+
+    show Kitarou annoyed at center:
+        yalign 1
+
+    bad "I'm glad I killed that whore. I never understood why she would ever pick you over me."
+
+    "{i} I'm going to kill him. {w} I swear, I'll --{/i}"
+
+    bad "So what? What are you gonna do about it now?"
+    bad "YOU KNOW WHAT, YOU BOTH SHOULD HAVE DIED THAT DAY, BUT YOU MAKE IT OUT WITH BARELY A SCRATCH LIKE IT'S NOTHING."
+
+    hide Kitarou annoyed
+
+    "{i} I grip the knife that I was just cutting steak with, my knuckles hot-white. {w=4} I lunge at him. {i}"
+    "{i} I pounce over the table knocking everything off of it, from the centerpiece to the food we just took a bite of, now in shattered plates on the floor. {/i}"
+
+    "{i} He resists and strikes me in the liver with his fist.{i} Dammit, I forgot he used to do Martial arts. {w} Whatever. I'm armed."
+
+    "{i} I plunge the steak knife deep into the side of his neck with his smug grin as it fades into an annoyed yet sly smirk. {/i}" 
+
+    "{i}Driving my hand repeatedly to do something that feels unjust and unnatural, blood sputters out instead of the screams that would've been. {/i}"
+
+    bad "{b} Gurgled Laughing {/b}"
+
+    "{i} The static ringing from the adrenaline and blinding rage numbs the weight of my actions. {/i}"
+
+    "{i} A flurry of stabs missing the mark of his mouth to keep him from uttering anymore words and plenty to his heart to keep his vile body from doing anymore harm to anyone else. {/i}"
+
+    "{i} It was like my hand was guided to his throat to stop him from sputtering anymore vile things. {/i}"
+
+    "...{w} {i} and I kept going. {/i}"
+
+    "Over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over."
+
+    "It feels like time stopped."
 
     "Everything has frozen in place except the blood gurgling from his throat."
 
-    "I got up from the ocean of blood that littered the dining room floor."
+    "I got up from the ocean of blood that littered the dining room floor and staggered towards the kitchen sink."
 
-    "Staggering towards the kitchen sink."
-
-    "I wash my hands of the guilt I have."
-
-    "It won't come off"
+    "I wash my hands of the guilt I have. {w=4} ... {w=4} It won't come off."
 
     "I just keep washing with soap, with the sponge and with the steel wool. It just won't come off."
     "The blood is gone."
     "But my hands still feel slimy."
-    "Its like im wearing hands that aren't mine. It feels so sickening, So unnerving."
+    "Its like I'm wearing hands that aren't mine. It feels so sickening, So unnerving."
     "No matter how much I keep scrubbing it wont come off."
     "My skin starts to peel as soon as I start using the steel sponge to clean my hands."
 
-    "I got out of there."
+    "I leave."
 
-    "I can’t sleep. My sins became physical and my morals abstract."
+    "I go home like nothing happened. But I can't sleep. My sins became physical and my moral center fractured."
 
-    "I still need to talk to Naomi tomorrow, I hope she gets better soon."
+    "...I still need to talk to Naomi tomorrow." 
+    
+    "I hope she gets better soon."
 
-    "A sleepless night passes"
+    "A sleepless night passes. All that crosses my thoughts are what I'd done. "
+    
+    "Its all my fault... Why am I still alive?"
 
-    "All the crosses your thoughts are the deeds of what you've done as the gravity of your actions drag you down deeper into the abyss of remorse and guilt."
+    "I hear a knocking on the door this time. It's naomi. Her face looks morose."
+    
+    "Its like she hasnt gotten any sleep either. Her eyes are puffy and nose riddled with snot bubbles."
+    
+    show Naomi neutral at center:
+        yalign 1
 
-    "Its all my fault. Why am I still alive."
-
-    "I hear a knocking on the door this time."
-
-    "Its naomi"
-    "Her face looks morose."
-    "Its like she hasnt gotten any sleep either."
-    "Her eyes are puffy and nose riddled with snot bubbles."
-    "NAOKKIIII"
+    omi "Naoki..."
 
     "Her tone seems more sullen than her usual bubbly demeanor."
-    "Whats wrong?"
 
-    "Its Kitaro naoki…."
-    "Hes, hes dead"
+    nao "Whats wrong?"
 
-    "Why. Even when hes gone he still haunting me. Why Me."
+    omi "I--It's Kitaro, naoki... He's... he's dead..!"
 
-    "WHY WOULD SOMEONE DO SOMETHING SO HORRIBLE"
-    "HE WOULDNT EVEN HURT A FLY, SO WHY"
-    "Hes riddled with holes, I cant even look at him without gagging"
+    omi "WHY... WHY WOULD SOMEONE DO SOMETHING SO HORRIBLE! KITARO WOULDN'T EVEN HURT A FLY!!!"
 
-    "Naoki gives Naomi a thousand year stare as she sobs"
+    "She takes a break from wailing and continues."
 
-    "Whats wrong, Why arent you saying anything?"
-    "Kitaro was our friend, and hes just gone now"
+    omi "The police said he was riddled with holes... I can't even imagine it without gagging...!"
 
-    "…"
+    "{i} I stare at her blankly. {/i}"
 
-    "SAY SOMETHING PLEASE"
-    "WHY ARE YOU ACTING LIKE JOSIE RIGHT NOW."
-    "ALL GUYS EVER DO IS MAKE ME WORRY"
+    omi "What's wrong... Why aren't you saying anything?! Kitaro was our friend, and now he's been killed!"
+    omi "Come on... Say something please! Please.... All you guys ever do is make me worry.... This is terrible..."
 
-    "She cries out as she collapses on her knees crossed on the doorstep"
+    "{i} She cries and collapses on her knees at the doorstep. {/i}"
+
+    jump ending
 
 #    menu:
 #        "Anyways, what do you choose?"
@@ -428,15 +507,15 @@ label hospital:
 #            call screen2show
 #            jump good_road-
 
-label good_road:
-    scene bg black
-    "You made the right choice!"
-    return
+# label good_road:
+#     scene bg black
+#     "You made the right choice!"
+#     return
 
-label bad_road:
-    scene bg black
+# label bad_road:
+#     scene bg black
 
-    "You feel yourself losing consciousness... {w=3.0}{nw}"
-    jump ending
+#     "You feel yourself losing consciousness... {w=3.0}{nw}"
+#     jump ending
 
 
