@@ -1167,7 +1167,7 @@ screen bubble_minigame():
     if bubble_game.game_over:
         # text "Game Over!" xpos 0.5 ypos 0.5 color "#FFF"
         $ bubble_list.clear()
-        timer 0.5 action Jump("bad_road")
+        timer 0.5 action Jump("afterwards")
 
 
 screen minigame2():

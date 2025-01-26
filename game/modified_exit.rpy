@@ -89,7 +89,7 @@ screen credits():
             text "Artists"
             null height 10
             text "Mari Gonzalez"
-            null height 10
+            null height 75
 
             text "Writers"
             null height 10
@@ -101,6 +101,9 @@ screen credits():
             text "Music and Sound design"
             null height 10
             text "Justin Lu"
+            null height 75
+
+            text "Music used: Lost in quiet - Dova Syndrome"
             null height 10
 
 

@@ -1,7 +1,5 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
 define nao = Character("Naoki")
 define jos = Character("Josie")
 define unknown = Character("???")
@@ -12,13 +10,27 @@ define cute = Character("Ichigo")
 image Kitarou neutral = "images/Kitarou neutral.png"
 image Naomi neutral = "images/Naomi neutral.png"
 image Kitarou annoyed = "images/Kitarou annoyed.png"
+image Kitarou crazy = "images/Kitarou crazy.png"
 image Naomi excited = "images/Naomi excited.png"
+image Ichigo silhouette = "images/Ichigo silhouette.png"
+image Naomi sad = "images/Naomi sad.png"
 
 # The game starts here.
 
-label start:
-    play music "placeholder_music.wav"
+label splashscreen:
+    scene black
+    with Pause(1)
 
+    show text "This game may contain themes inappropriate for young audiences. Such themes include gore, strong language, and graphic depictions of violence."
+    with Pause(10)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
+label start:
+    play music "dovasynd - lostinquiet.mp3"
     scene bg black
 
     "Regret and remorse. They can both come hand in hand as a pair, but that doesnt mean they should."
@@ -200,7 +212,7 @@ label hospital:
     show Naomi neutral at center:
         yalign 1
 
-    omi "So, Kitaro didn’t show up huh? Who would've thought! {w} I guess the accident affected that loser more than you."
+    omi "So, Kitaro didn't show up huh? Who would've thought! {w} I guess the accident affected that loser more than you."
 
     nao "...{w}Sure."
 
@@ -235,14 +247,12 @@ label hospital:
 
     omi "Ohh, so sorry but I can't! I gotta go now! I have a spa treatment at 2pm!"
 
-# i am disliking kitarou LMAOOO
-# "where's my hug" type guy cndsnfsnva
 
     "{i} His brows furrow at her excuse to absolutely not hang out with him (I don't blame her) and it thoroughly annoys me. {/i}"
 
     bad "Oh wow okay, So I guess it's like that then."
 
-    nao "Yes, it IS like that, dummy! You certainly look like you could use the spa too though, those legs need waxing!"
+    omi "Yes, it IS like that, dummy! You certainly look like you could use the spa too though, those legs need waxing!"
 
     show Naomi excited at right:
         yalign 1
@@ -302,7 +312,16 @@ label hospital:
 
     hide Kitarou neutral
 
+    scene bg white with fade
+
+    show Ichigo silhouette:
+        yalign 1
+
     "{i} The boat. {/i}"
+
+    hide Ichigo silhouette
+
+    scene bg kitchen with fade
 
     show Kitarou neutral at center:
         yalign 1
@@ -315,11 +334,8 @@ label hospital:
     "{i} Just hearing her name was enough. {/i}"
     "{i} It sends me spiraling into memories I tried to bury... {w} memories I'd hope to forget along with the pain. {/i}"
 
-    scene bg black
-
-    show Ichigo excited at center
-
-    cute "Hi, Naoki!"
+    scene bg ichigo
+    cute "Naoki!"
 
     nao "Ichigo…."
 
@@ -364,7 +380,7 @@ label hospital:
         yalign 1
 
     bad "Are you even listening to me? I can't believe I let you into my home, even after the whole damn boat thing!"
-    bad "I pay hundreds in insurance, and THIS is how you treat ME?"
+    bad "I pay hundreds in boat insurance, and THIS is how you treat ME?"
 
     nao "...I'm sorry."
 
@@ -391,7 +407,7 @@ label hospital:
 
     "{i} He chuckles, then says something I couldn't believe. {/i}"
 
-    show Kitarou annoyed at center:
+    show Kitarou crazy at center:
         yalign 1
 
     bad "Do you know how EASY it was to stage a murder and blame it on some dumbass like you?"
@@ -399,32 +415,35 @@ label hospital:
 
     nao "What {w=3}{nw}the {w=3}{w}hell?"
 
-    hide Kitarou annoyed
+    hide Kitarou crazy
 
     "{i} He drops his grin and replaces it with a sadistic smile. {/i}"
 
-    show Kitarou annoyed at center:
+    show Kitarou crazy at center:
         yalign 1
 
-    bad "I'm glad I killed that whore. I never understood why she would ever pick you over me."
+    bad "I'm glad I killed that wh*re. I never understood why she would ever pick you over me."
 
     "{i} I'm going to kill him. {w} I swear, I'll --{/i}"
 
     bad "So what? What are you gonna do about it now?"
     bad "YOU KNOW WHAT, YOU BOTH SHOULD HAVE DIED THAT DAY, BUT YOU MAKE IT OUT WITH BARELY A SCRATCH LIKE IT'S NOTHING."
 
-    hide Kitarou annoyed
+    hide Kitarou crazy
 
     "{i} I grip the knife that I was just cutting steak with, my knuckles hot-white. {w=4} I lunge at him. {i}"
     "{i} I pounce over the table knocking everything off of it, from the centerpiece to the food we just took a bite of, now in shattered plates on the floor. {/i}"
 
-    "{i} He resists and strikes me in the liver with his fist.{i} Dammit, I forgot he used to do Martial arts. {w} Whatever. I'm armed."
+    "{i} He resists and strikes me in the liver with his fist.{i}"
 
     "{i} I plunge the steak knife deep into the side of his neck with his smug grin as it fades into an annoyed yet sly smirk. {/i}" 
+    
+    scene bg kitarourip
+    
 
     "{i}Driving my hand repeatedly to do something that feels unjust and unnatural, blood sputters out instead of the screams that would've been. {/i}"
 
-    bad "{b} Gurgled Laughing {/b}"
+    bad "{b} *Gurgled Laughter* {/b}"
 
     "{i} The static ringing from the adrenaline and blinding rage numbs the weight of my actions. {/i}"
 
@@ -434,6 +453,8 @@ label hospital:
 
     "...{w} {i} and I kept going. {/i}"
 
+    scene placeholder cg
+
     "Over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over. {w}And over."
 
     "It feels like time stopped."
@@ -442,10 +463,15 @@ label hospital:
 
     "I got up from the ocean of blood that littered the dining room floor and staggered towards the kitchen sink."
 
-    "I wash my hands of the guilt I have. {w=4} ... {w=4} It won't come off."
+    "...I wash my hands of the guilt I have." 
+
+    scene bg black
+
+    label afterwards:
+    "It won't come off."
 
     "I just keep washing with soap, with the sponge and with the steel wool. It just won't come off."
-    "The blood is gone."
+    "...After a while, the blood is finally gone."
     "But my hands still feel slimy."
     "Its like I'm wearing hands that aren't mine. It feels so sickening, So unnerving."
     "No matter how much I keep scrubbing it wont come off."
@@ -453,7 +479,7 @@ label hospital:
 
     "I leave."
 
-    "I go home like nothing happened. But I can't sleep. My sins became physical and my moral center fractured."
+    "I go home like nothing happened. But I can't sleep. My sins became physical and my moral compass fractured."
 
     "...I still need to talk to Naomi tomorrow." 
     
@@ -465,9 +491,11 @@ label hospital:
 
     "I hear a knocking on the door this time. It's naomi. Her face looks morose."
     
-    "Its like she hasnt gotten any sleep either. Her eyes are puffy and nose riddled with snot bubbles."
+    "Its like she hasnt gotten any sleep either. Her eyes are puffy and nose riddled with snot bubbles. I let her into the kitchen and listen to what she has to say."
     
-    show Naomi neutral at center:
+    scene bg kitchen
+
+    show Naomi sad at center:
         yalign 1
 
     omi "Naoki..."
@@ -480,7 +508,7 @@ label hospital:
 
     omi "WHY... WHY WOULD SOMEONE DO SOMETHING SO HORRIBLE! KITARO WOULDN'T EVEN HURT A FLY!!!"
 
-    "She takes a break from wailing and continues."
+    "{i} She takes a break from wailing then continues with the news. {/i}"
 
     omi "The police said he was riddled with holes... I can't even imagine it without gagging...!"
 
@@ -489,7 +517,25 @@ label hospital:
     omi "What's wrong... Why aren't you saying anything?! Kitaro was our friend, and now he's been killed!"
     omi "Come on... Say something please! Please.... All you guys ever do is make me worry.... This is terrible..."
 
-    "{i} She cries and collapses on her knees at the doorstep. {/i}"
+    "{i} She cries and collapses on her knees. {/i}"
+
+    "I don't console her. I can't. ... Not after everything that's happened."
+
+    nao "Our? What do you mean OUR friend?!"
+
+    nao "Kitaro was YOUR friend, and all he did was endanger us that day!"
+
+    nao "HE is the reason Ichigo died, and you WOULDN'T EVEN KNOW ME IF IT WEREN'T FOR HER!"
+
+    "It all comes out in one go. I couldn't take it anymore."
+
+    nao "There wasnt even a bridge between us to burn in the first place... {w} Goodbye, Naomi."
+
+    scene bg black
+
+    "{i} I push her out the door and close it shut.{/i}"
+
+    "... {w} Tomorrow, I don't know what I'll do. But first, I need to wash my hands."
 
     jump ending
 

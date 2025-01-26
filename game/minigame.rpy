@@ -23,7 +23,7 @@ init python:
     class BubbleMinigame:
         def __init__(self):
             self.bubbles_popped = 0
-            self.max_bubbles = 12
+            self.max_bubbles = 7
             self.time_limit = 15 # seconds
             self.game_over = False
             self.start_time = None
@@ -51,7 +51,7 @@ label minigame:
     show screen bubble_minigame
     $ renpy.pause(30, hard=True)
     hide screen bubble_minigame
-    return
+    jump afterwards
 
 transform bubble_move(x, y):
     xpos x
